@@ -115,22 +115,23 @@ handleSubmit(id, player){
             <React.Fragment>
                  <Instructions />   
 
-                <div>
-                    <h1 className='center-text header-lg'>Players</h1>
-                </div>
+                <div className="players-container">
+                    <h1 className='center-text header-lg'>Users to compare</h1>
+                
                 <div className="row space-around">
                 {playerOne === null && (
                     <PlayerInput    
-                        label="Player One"
+                        label="User One"
                         onSubmit={(player) => this.handleSubmit('playerOne', player)}
                     />
                 )}
                  {playerTwo === null && (
                     <PlayerInput    
-                        label="Player Two"
+                        label="User Two"
                         onSubmit={(player) => this.handleSubmit('playerTwo', player)}
                     />
                 )}
+                </div>
                 </div>
 
                  {/* <PlayerInput label="label" onSubmit={value => console.log('value!', value)}/> */}
