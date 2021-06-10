@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaUserFriends, FaFighterJet, FaTrophy, FaTimesCircle} from 'react-icons/fa'
 import PropTypes from 'prop-types'
+import Results from './Results'
 
 function Instructions(){
     return (
@@ -131,6 +132,7 @@ export default class Compare extends React.Component {
 this.state = {
     playerOne: null,
     playerTwo: null,
+    compare:false
     }
 
 this.handleSubmit = this.handleSubmit.bind(this);
@@ -154,7 +156,12 @@ handleReset(id) {
 
     render(){
 
-        const {playerOne, playerTwo} = this.state
+        const {playerOne, playerTwo, compare} = this.state
+
+        if (compare) {
+            return <Results playerOne={playerOne} playerTwo={playerTwo} />
+
+        }
 
 
         return (
@@ -175,6 +182,8 @@ handleReset(id) {
                     label='Player One' 
                     onReset={() => this.handleReset('playerOne')}
                     />}
+
+
                  {playerTwo === null ?
                     <PlayerInput    
                         label="User Two"
@@ -186,10 +195,20 @@ handleReset(id) {
                     onReset = {() => this.handleReset('playerTwo')}
                     />}
                 </div>
-                </div>
-                
 
-                 {/* <PlayerInput label="label" onSubmit={value => console.log('value!', value)}/> */}
+                {playerOne && playerTwo && (
+                    <button
+                    className="btn dark-btn btn-space"
+                    onClick={() => this.setState({compare:true})}
+                    >
+                    Compare
+                    </button>
+
+                )}
+
+
+                </div>
+
 
             </React.Fragment>
         )
