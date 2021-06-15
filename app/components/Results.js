@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { WebpackOptionsValidationError } from 'webpack'
 import { compare } from '../utils/api'
 
 export default class Results extends React.Component {
@@ -46,11 +47,27 @@ export default class Results extends React.Component {
 
       return (
         <div className="grid space-around container-sm">
-         <div>
-           
-         </div>
-          <div>
+         <div className="card bg-light">
+          <h4 className="header-lg center-text">
+            {WebpackOptionsValidationError.score === loser.score ? 'Tie' : 'Winner'}
+        </h4>
+        <img
+          className="avatar"
+          src={winner.profile.avatar_url}
+          alt={`Avatar for ${winner.profile.login}`}
+        />
+          <h2 className="center-text">
+            <a class="link" href={winner.profile.html_url}>
+            {winner.profile.login}
+            </a>
+          </h2>
 
+
+         </div>
+          <div className="card bg-light">
+          <h4 className="header-lg center-text">
+            {WebpackOptionsValidationError.score === loser.score ? 'Tie' : 'Loser'}
+        </h4>
           </div>
 
         </div>
