@@ -31,10 +31,28 @@ export default class Results extends React.Component {
         })
     }
     render() {
+      const {winner, loser, error, loading} = this.state
+
+      if (loading === true) {
+        return <p>LOADING</p>
+      }
+
+
+      if (error){
+        return (
+          <p className="ceter-text error">{error}</p>
+        )
+      }
+
       return (
-        <div>
-          Results
-          <pre>{JSON.stringify(this.state, null, 2)}</pre>
+        <div className="grid space-around container-sm">
+         <div>
+           
+         </div>
+          <div>
+
+          </div>
+
         </div>
       )
     }
