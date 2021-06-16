@@ -1,7 +1,5 @@
 # github-compare
 
-Github compare
-
 ### Demo: https://marcinpietkiewicz.github.io/github-compare/
 
 ## Functionality
@@ -14,12 +12,12 @@ You can filter most popular by several languages/libraries (JS/Ruby/Java/CSS/Pyt
 
 ![Light mode](https://i.postimg.cc/cJq8St0x/compare1.png)
 Light mode
-![Dark mode](blob:https://imgur.com/acdb59d6-c5b1-4aba-9566-56f8df281c91(
+![Dark mode](https://i.postimg.cc/3JRGCHtT/compare4-night.png)
 Dark mode
 
 ### 2. Compare webpage
 
-![Compare page](blob:https://imgur.com/eb06fbd6-ddb1-4075-9776-2b88aa45060c)
+![Compare page](ttps://i.postimg.cc/wTGmwbrs/compare2.png)
 
 Compare tab allows user to compare two github accounts popularity based on couple of parameters:
 Parameter | Weight
@@ -30,4 +28,4 @@ People followed | 0.1
 
 After submitting compare button it shows more popular user and compare their stats:
 
-![results webpage](blob:https://imgur.com/df50d2f7-45cd-4f3b-8eac-aef1c106957a)
+![results webpage](https://i.postimg.cc/sgGZq4FH/compare3.png)
