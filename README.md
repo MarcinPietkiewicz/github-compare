@@ -17,7 +17,7 @@ You can filter most popular by several languages/libraries (JS/Ruby/Java/CSS/Pyt
 
 ### 2. Compare webpage
 
-![Compare page](ttps://i.postimg.cc/wTGmwbrs/compare2.png)
+![Compare page](https://i.postimg.cc/wTGmwbrs/compare2.png)
 
 Compare tab allows user to compare two github accounts popularity based on couple of parameters:
 Parameter | Weight
