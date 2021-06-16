@@ -10,10 +10,10 @@
 Main page shows most popular github repositories
 You can filter most popular by several languages/libraries (JS/Ruby/Java/CSS/Python)
 
-![Light mode](https://i.postimg.cc/cJq8St0x/compare1.png)\ 
-Light mode
-![Dark mode](https://i.postimg.cc/3JRGCHtT/compare4-night.png)\ 
-Dark mode
+![Light mode](https://i.postimg.cc/cJq8St0x/compare1.png)
+<br/>Light mode
+![Dark mode](https://i.postimg.cc/3JRGCHtT/compare4-night.png)
+<br/>Dark mode
 
 ### 2. Compare webpage
 
