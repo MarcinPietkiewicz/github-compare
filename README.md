@@ -12,7 +12,7 @@ Github compare
 Main page shows most popular github repositories
 You can filter most popular by several languages/libraries (JS/Ruby/Java/CSS/Python)
 
-![Light mode](blob:https://imgur.com/587dd703-c676-4f76-9cae-8a2d684a71e0)
+![Light mode](https://postimg.cc/G4QpP24V)
 Light mode
 ![Dark mode](blob:https://imgur.com/acdb59d6-c5b1-4aba-9566-56f8df281c91(
 Dark mode
