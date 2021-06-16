@@ -1,11 +1,8 @@
-# github-compare
-
-### Demo: https://marcinpietkiewicz.github.io/github-compare/
+Demo: https://marcinpietkiewicz.github.io/github-compare/
 
 ## Functionality
 
 ### 1. Main webpage
-<img>
 
 Main page shows most popular github repositories
 You can filter most popular by several languages/libraries (JS/Ruby/Java/CSS/Python)
