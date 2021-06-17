@@ -1,12 +1,11 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { fetchPopularRepos} from '../utils/api';
-import {FaUser, FaStar, FaCodeBranch, FaExclamationTriangle} from 'react-icons/fa';
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import { fetchPopularRepos } from '../utils/api'
+import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from 'react-icons/fa'
 import Card from './Card'
 
-
 function LanguagesNav ({selected, onUpdateLanguage}){
-  const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
+  const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']
 
   return (
     <ul className='flex-center'>
@@ -45,9 +44,7 @@ function ReposGrid({repos}){
                         avatar={avatar_url}
                         href={html_url}
                         name={login}
-
-                      />
-
+                      >
                             <ul className='card-list'>
                                 <li>
                                     <FaUser color='rgb(255,191,116)' size={22}/>
@@ -65,43 +62,38 @@ function ReposGrid({repos}){
                                 </li>
 
                                 <li>
-                                    <FaExclamationTriangle color='rgb(214,139,147)' size={22}/>
+                                    <FaExclamationTriangle color='rgb(241, 138, 147)' size={22} />
                                     {open_issues.toLocaleString()} open issues
                                 </li>
                             </ul>
+                            </Card>
                     </li>
                 )
 })}
-
         </ul>
     )
 }
-
 
 ReposGrid.propTypes = {
     repos: PropTypes.array.isRequired
 }
 
-
 export default class Popular extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
 
     this.state = {
       selectedLanguage: 'All',
       repos: {},
-      error: null
+      error: null,
     }
 
     this.updateLanguage = this.updateLanguage.bind(this)
     this.isLoading = this.isLoading.bind(this)
   }
-
   componentDidMount(){
     this.updateLanguage(this.state.selectedLanguage);
   }
-
-
   updateLanguage(selectedLanguage){
     this.setState({
       selectedLanguage,
