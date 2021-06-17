@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 import { fetchPopularRepos} from '../utils/api';
 import {FaUser, FaStar, FaCodeBranch, FaExclamationTriangle} from 'react-icons/fa';
 
 function LanguagesNav ({selected, onUpdateLanguage}){
-  const languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
+  const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
 
   return (
     <ul className='flex-center'>
@@ -118,19 +118,16 @@ export default class Popular extends React.Component {
           }}))
         })
         .catch((error) => {
-          console.warn('Error fetching repos: ', error);
+          console.warn('Error fetching repos: ', error)
 
           this.setState({
-            error: 'There was an error fetching the repositories '
+            error: `There was an error fetching the repositories.`
           })
         })
     }
   }
-
-
-  isLoading(){
-
-    const {selectedLanguage, repos, error} = this.state;
+  isLoading() {
+    const {selectedLanguage, repos, error} = this.state
 
     return !repos[selectedLanguage] && error === null
   }
@@ -148,7 +145,7 @@ export default class Popular extends React.Component {
 
         {this.isLoading() && <p>LOADING</p>}
 
-        {error && <p className="center-text error">{error}</p>}
+        {error && <p className='center-text error'>{error}</p>}
 
         {repos[selectedLanguage] && <ReposGrid repos={repos[selectedLanguage]} />}
       </React.Fragment>

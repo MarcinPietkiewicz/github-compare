@@ -118,7 +118,7 @@ function PlayerPreview ({username, onReset, label}) {
 
 }
 
-PlayerPreview.proptypes = {
+PlayerPreview.propTypes = {
     username: PropTypes.string.isRequired,
     onReset: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired
@@ -158,7 +158,7 @@ handleReset(id) {
 
         const {playerOne, playerTwo, compare} = this.state
 
-        if (compare) {
+        if (compare === true) {
             return <Results playerOne={playerOne} playerTwo={playerTwo} />
 
         }
@@ -174,7 +174,7 @@ handleReset(id) {
                 <div className="row space-around">
                 {playerOne === null ? 
                     <PlayerInput    
-                        label="User One"
+                        label="Player One"
                         onSubmit={(player) => this.handleSubmit('playerOne', player)}
                     />
                     : <PlayerPreview 
@@ -186,7 +186,7 @@ handleReset(id) {
 
                  {playerTwo === null ?
                     <PlayerInput    
-                        label="User Two"
+                        label="Player Two"
                         onSubmit={(player) => this.handleSubmit('playerTwo', player)}
                     />
                     : <PlayerPreview
