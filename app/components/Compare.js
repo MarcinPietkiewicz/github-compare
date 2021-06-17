@@ -22,8 +22,6 @@ function Instructions(){
                     <h3 className="header-sm">See comparison:</h3>
                     <FaTrophy className="bg-light" color="rgb(255,215,0)" size={140} />
                 </li>
-
-
             </ol>
         </div>
     )
@@ -36,23 +34,22 @@ class PlayerInput extends React.Component {
     this.state = {
         username: ''
     }
+
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)  
 }
     handleSubmit(event) {
         event.preventDefault()   
+
         this.props.onSubmit(this.state.username)
 }
-
-    handleChange(event){
+    handleChange(event) {
         this.setState({
             username: event.target.value
         })
     }
-
     render() {
         return (
-          
             <form className='column player' onSubmit={this.handleSubmit}>
                 <label htmlFor="username" className="player-label">
                     {this.props.label} 
@@ -108,14 +105,10 @@ function PlayerPreview ({username, onReset, label}) {
             </div>
             <button className="btn-clear flex-center" onClick={onReset}>
                 <FaTimesCircle color="rgb(194,57,42)" size={26} />
-
             </button>
-               
            </div>
         </div>
     )
-
-
 }
 
 PlayerPreview.propTypes = {
@@ -124,7 +117,6 @@ PlayerPreview.propTypes = {
     label: PropTypes.string.isRequired
 }
 
-
 export default class Compare extends React.Component {
     constructor(props){
         super(props)
@@ -132,10 +124,10 @@ export default class Compare extends React.Component {
 this.state = {
     playerOne: null,
     playerTwo: null,
-    compare:false
+    compare: false
     }
 
-this.handleSubmit = this.handleSubmit.bind(this);
+this.handleSubmit = this.handleSubmit.bind(this)
 this.handleReset = this.handleReset.bind(this)
 }
 
@@ -145,24 +137,17 @@ handleSubmit(id, player){
         [id]: player
     })
 }
-
-
 handleReset(id) {
     this.setState({
         [id]: null
     })
 }
-
-
-    render(){
-
+    render() {
         const {playerOne, playerTwo, compare} = this.state
 
         if (compare === true) {
             return <Results playerOne={playerOne} playerTwo={playerTwo} />
-
         }
-
 
         return (
             <React.Fragment>
@@ -170,7 +155,6 @@ handleReset(id) {
 
                 <div className="players-container">
                     <h1 className='center-text header-lg'>Users to compare</h1>
-                
                 <div className="row space-around">
                 {playerOne === null ? 
                     <PlayerInput    
@@ -181,20 +165,22 @@ handleReset(id) {
                     username={playerOne}
                     label='Player One' 
                     onReset={() => this.handleReset('playerOne')}
-                    />}
+                    />
+                    }
 
-
-                 {playerTwo === null ?
-                    <PlayerInput    
+                 {playerTwo === null 
+                 ? <PlayerInput    
                         label="Player Two"
                         onSubmit={(player) => this.handleSubmit('playerTwo', player)}
                     />
                     : <PlayerPreview
                     username={playerTwo}
                     label="Player Two"
-                    onReset = {() => this.handleReset('playerTwo')}
-                    />}
+                    onReset={() => this.handleReset('playerTwo')}
+                    />
+                    }
                 </div>
+
 
                 {playerOne && playerTwo && (
                     <button
@@ -203,13 +189,8 @@ handleReset(id) {
                     >
                     Compare
                     </button>
-
                 )}
-
-
                 </div>
-
-
             </React.Fragment>
         )
     }
