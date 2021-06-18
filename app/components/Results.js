@@ -4,6 +4,7 @@ import { FaCompass, FaBriefcase, FaUsers, FaUserFriends, FaCode, FaUser } from '
 import Card from './Card'
 import PropTypes from 'prop-types'
 import Loading from './Loading'
+import Tooltip from './Tooltip'
 
 const styles = {
   container: {
@@ -66,25 +67,19 @@ class ProfileList extends React.Component {
         {profile.name}
       </li>
       {profile.location && (
-        <li 
-        onMouseOver={() => this.mouseOver('hoveringLocation')} 
-        onMouseOut={() => this.mouseOut('hoveringLocation')}
-        style={styles.container}
-        >
-          {hoveringLocation === true && <div style={styles.tooltip}>User's location</div>}
-          <FaCompass color='rgb(144, 115, 255)' size={22} />
-          {profile.location}
+        <li>
+          <Tooltip text="User's location">
+            <FaCompass color='rgb(144, 115, 255)' size={22} />
+            {profile.location}
+          </Tooltip>
         </li>
       )}
       {profile.company && (
-        <li 
-        onMouseOver={() => this.mouseOver('hoveringCompany')} 
-        onMouseOut={() => this.mouseOut('hoveringCompany')}
-        style={styles.container}
-        >  
-          {hoveringCompany === true && <div style={styles.tooltip}>User's company</div>}
+        <li>
+          <Tooltip text="User's company">
           <FaBriefcase color='#795548' size={22} />
           {profile.company}
+          </Tooltip>
         </li>
       )}
       <li>
