@@ -4,13 +4,31 @@ import './index.css';
 import Popular from './components/Popular'
 import Compare from './components/Compare'
 import {ThemeProvider} from './contexts/theme'
+import Nav from './components/Nav'
 
 class App extends React.Component{
+constructor(props){
+    super(props)
+
+    this.state = {
+        theme: 'light',
+        toggleTheme: () => {
+            this.setState(({theme}) => ({
+                theme: theme === 'light' ? 'dark' : 'light'
+            }))
+        }
+    }
+
+}
+
     render(){
         return (
         <ThemeProvider value={}>
-            <div className='container'>
-                <Popular />
+            <div className={this.state.theme}>
+                <div className='container'>
+                    <Nav />
+                    <Popular />
+                </div>
             </div>
         </ThemeProvider>
         )}
