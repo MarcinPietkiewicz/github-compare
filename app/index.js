@@ -15,15 +15,13 @@ constructor(props){
         toggleTheme: () => {
             this.setState(({theme}) => ({
                 theme: theme === 'light' ? 'dark' : 'light'
-            }))
+                }))
+            }
         }
     }
-
-}
-
     render(){
         return (
-        <ThemeProvider value={}>
+        <ThemeProvider value={this.state}>
             <div className={this.state.theme}>
                 <div className='container'>
                     <Nav />

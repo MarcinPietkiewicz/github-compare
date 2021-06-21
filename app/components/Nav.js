@@ -9,11 +9,11 @@ export default function Nav () {
                 <nav className="row space-between">
                     <button
                         style={{fontSize: 30}}
-                        className="btn clear"
+                        className="btn-clear"
                         onClick={toggleTheme}
-                    />
-                   {theme === 'light' ? 'night mode' : 'day mode'} 
-
+                    >
+                   {theme === 'light' ? '🔦' : '💡'} 
+                    </button>
                 </nav>
             )}
         </ThemeConsumer>
