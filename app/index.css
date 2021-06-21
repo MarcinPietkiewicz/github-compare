@@ -27,7 +27,7 @@ li{
     color: #DADADA;
     background: #1C2022;
     min-height: 100%;
-    
+
 
 }
 
@@ -255,4 +255,9 @@ li{
     color: #ff1616;
     font-size:20px;
     margin:50px 0;
+}
+
+.bg-dark {
+    background: rgb(36,40,42);
+    border-radius:3px;
 }
