@@ -1,6 +1,11 @@
 import React from 'react'
 import {ThemeConsumer} from '../contexts/theme'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+
+const activeStyle = {
+    color: 'rgba(187,46,31'
+}
+
 
 export default function Nav () {
     return (
@@ -9,11 +14,21 @@ export default function Nav () {
                 <nav className="row space-between">
                     <ul className="row nav">
                         <li>
-                            <Link to="/" className="nav-link">Popular</Link>
+                            <NavLink 
+                            exact
+                            to="/" 
+                            activeStyle={activeStyle}
+                            className="nav-link">
+                                Popular
+                            </NavLink>
                         </li>
                         <li>
-                        <Link to="/compare" className="nav-link">Compare</Link>
-
+                            <NavLink 
+                            to="/compare" 
+                            activeStyle={activeStyle}
+                            className="nav-link">
+                                Compare
+                                </NavLink>
                         </li>
                     </ul>
 
