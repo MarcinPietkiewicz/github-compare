@@ -1,12 +1,14 @@
 {
-  "name": "github-battle",
+  "name": "github-compare",
+  "homepage": "index.html",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve",
-    "build": "NODE_ENV='production' webpack"
+    "build": "NODE_ENV='production' webpack",
+    "deploy": "gh-pages -d dist"
   },
   "babel": {
     "presets": [
@@ -31,6 +33,7 @@
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.3.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
