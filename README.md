@@ -26,3 +26,8 @@ People followed | 0.1
 After submitting compare button it shows more popular user and compare their stats:
 
 ![results webpage](https://i.postimg.cc/sgGZq4FH/compare3.png)
+
+Stuff used:
+- router v4
+- context
+- class / functional components
