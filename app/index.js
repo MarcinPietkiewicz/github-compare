@@ -5,6 +5,8 @@ import Popular from './components/Popular'
 import Compare from './components/Compare'
 import {ThemeProvider} from './contexts/theme'
 import Nav from './components/Nav'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
+
 
 class App extends React.Component{
 constructor(props){
@@ -21,14 +23,18 @@ constructor(props){
     }
     render(){
         return (
-        <ThemeProvider value={this.state}>
-            <div className={this.state.theme}>
-                <div className='container'>
-                    <Nav />
-                    <Compare />
-                </div>
-            </div>
-        </ThemeProvider>
+            <Router>
+                <ThemeProvider value={this.state}>
+                    <div className={this.state.theme}>
+                        <div className='container'>
+                            <Nav />
+
+                            <Route exact path='/' component={Popular} />
+                            <Route path='/compare' component={Compare} />
+                        </div>
+                    </div>
+                </ThemeProvider>
+            </Router>
         )}
 }
 
