@@ -28,7 +28,7 @@ export default function Nav () {
                             activeStyle={activeStyle}
                             className="nav-link">
                                 Compare
-                                </NavLink>
+                            </NavLink>
                         </li>
                     </ul>
 
