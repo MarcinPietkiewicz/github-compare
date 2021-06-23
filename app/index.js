@@ -1,44 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import Popular from './components/Popular'
-import Compare from './components/Compare'
-import {ThemeProvider} from './contexts/theme'
-import Nav from './components/Nav'
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Popular from "./components/Popular";
+import Compare from "./components/Compare";
+import { ThemeProvider } from "./contexts/theme";
+import Nav from "./components/Nav";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-
-class App extends React.Component{
-constructor(props){
-    super(props)
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
-        theme: 'light',
-        toggleTheme: () => {
-            this.setState(({theme}) => ({
-                theme: theme === 'light' ? 'dark' : 'light'
-                }))
-            }
-        }
-    }
-    render(){
-        return (
-            <Router>
-                <ThemeProvider value={this.state}>
-                    <div className={this.state.theme}>
-                        <div className='container'>
-                            <Nav />
+      theme: "light",
+      toggleTheme: () => {
+        this.setState(({ theme }) => ({
+          theme: theme === "light" ? "dark" : "light",
+        }));
+      },
+    };
+  }
+  render() {
+    return (
+      <Router>
+        <ThemeProvider value={this.state}>
+          <div className={this.state.theme}>
+            <div className="container">
+              <Nav />
 
-                            <Route exact path='/' component={Popular} />
-                            <Route path='/compare' component={Compare} />
-                        </div>
-                    </div>
-                </ThemeProvider>
-            </Router>
-        )}
+              <Route exact path="/" component={Popular} />
+              <Route path="/compare" component={Compare} />
+            </div>
+          </div>
+        </ThemeProvider>
+      </Router>
+    );
+  }
 }
 
-ReactDOM.render(
-    <App />,
-    document.getElementById('app')
-)
+ReactDOM.render(<App />, document.getElementById("app"));
