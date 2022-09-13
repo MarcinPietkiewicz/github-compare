@@ -27,7 +27,7 @@ After submitting compare button it shows more popular user and compare their sta
 
 ![results webpage](https://i.postimg.cc/sgGZq4FH/compare3.png)
 
-Stuff used:
+Tech stack used:
 - router v4
 - context
 - class / functional components
